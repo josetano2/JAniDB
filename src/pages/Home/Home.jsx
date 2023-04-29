@@ -16,7 +16,12 @@ export default function Home(){
     })
 
     if(error) return <h1>{error.message}</h1>
-    if(loading) return <LoadingScreen/>
+    if(loading) return (
+        <div>
+            <NavBar/>
+            <LoadingScreen/>
+        </div>
+    )
 
     return (
         <div className="bg">

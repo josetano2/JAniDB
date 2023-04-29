@@ -66,7 +66,7 @@ query getAiringAnime($page: Int, $perPage: Int){
 export const GET_SEARCH_ANIME = gql`
 query getAllAnimeSearch($titleSearch: String){
   Page(page: 1, perPage: 20){
-    media(type: ANIME, search: $titleSearch, sort:POPULARITY_DESC, isAdult: false){
+    media(type: ANIME, search: $titleSearch, sort:SCORE_DESC, isAdult: false){
       id
       title {
         romaji
@@ -77,6 +77,7 @@ query getAllAnimeSearch($titleSearch: String){
       coverImage{
         large
       }
+      averageScore
     }
   }
 }

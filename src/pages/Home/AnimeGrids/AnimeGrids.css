@@ -1,31 +1,117 @@
-.grids{
+/* .grids{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    margin-left: 160px;
-    margin-right: 200px;
-    margin-top: 40px;
-    grid-auto-rows: 350px;
-    gap: 2rem;  
+    grid-template-columns: repeat(5, 14vw);
+    margin-left: 11vw;
+    margin-right: 14vw;
+    margin-top: 5vh;
+    grid-auto-rows: 24vw;
+    gap: 2vw;  
     color: #F4EEE0;
     font-size: 15px;
 }
 
-.anime-image{
-    width: 200px;
-    height: 260px;
-    object-fit: cover;
-    border-radius: 10px;
-    opacity: 80%;
+.image-container{
     position: relative;
     transition: transform 0.2s;
-    margin-bottom: 15px;
+    margin-bottom: 2vh;
 }
 
-.anime-image:hover{
+.image-container:hover{
     cursor: pointer;
     transform: scale(1.1);
     transition: transform 0.2s;
-    opacity: 100%;
+}
+
+.anime-image{
+    width: 14vw;
+    height: 33vh;
+    object-fit: cover;
+    border-radius: 10px;
+    opacity: 80%;
+}
+
+.info-box{
+    position: absolute;
+    background: #6D5D6E;
+    width: 100%;
+    padding: 0.5vw;
+    bottom: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 13px;
+}
+
+.image-container:hover .anime-image, 
+.info-box:hover ~ .anime-image {
+  opacity: 100%;
+}
+
+.white-font{
+    color: #F4EEE0;
+}
+
+ */
+
+.grids{
+    display: grid;
+    grid-template-columns: repeat(5, 14vw);
+    margin-left: 11vw;
+    margin-right: 14vw;
+    margin-top: 5vh;
+    grid-auto-rows: 24vw;
+    gap: 2vw;  
+    color: #F4EEE0;
+    font-size: 15px
+}
+
+@media (max-width: 480px) {
+    .grids {
+        grid-template-columns: repeat(2, 45vw);
+        margin-left: 3vw;
+        margin-right: 3vw;
+        grid-auto-rows: 40vh;
+        gap: 0.5vw;  
+    }
+
+    
+}
+
+.image-container{
+    width: 100%;
+    height: 80%;
+    position: relative;
+    transition: transform 0.2s;
+    margin-bottom: 2vh;
+}
+
+.image-container:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: transform 0.2s;
+}
+
+.anime-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    opacity: 80%;
+}
+
+.info-box{
+    position: absolute;
+    background: #6D5D6E;
+    width: 100%;
+    padding: 0.5vw;
+    bottom: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 13px;
+}
+
+.image-container:hover .anime-image, 
+.info-box:hover ~ .anime-image {
+  opacity: 100%;
 }
 
 .white-font{

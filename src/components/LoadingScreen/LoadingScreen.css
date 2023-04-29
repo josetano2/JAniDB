@@ -9,7 +9,7 @@
    display: flex;
    --height-of-loader: 10px;
    --loader-color: #393646;
-   width: 260px;
+   width: 20vw;
    height: var(--height-of-loader);
    border-radius: 30px;
    background-color: #F4EEE0;
@@ -17,8 +17,7 @@
    justify-content: center;
    align-items: center;
    margin: auto;
-   margin-top: 350px;
-
+   margin-top: 50vh;
 }
   
 .loader::before {

@@ -32,20 +32,23 @@ export default function Search(){
             {data.Page.media.map((anime) => {
                 return <Card>
                     <Link to={`/${anime.id}`} className="white-font">
-                    <CardImage className="anime-image" src={anime.coverImage.large}/>
+                    <div className="image-container">
+                        <CardImage className="anime-image" src={anime.coverImage.large}/>
+                        <div className="info-box">Score: {anime.averageScore}</div>
+                    </div>
                     {anime.title.english ? (
                         <CardDetail>
                             <div>{anime.title.english}</div>
                         </CardDetail>
                         ) : (
-                            <CardDetail>
+                        <CardDetail>
                             <div>{anime.title.native}</div>
                         </CardDetail>
                         )}
                     </Link>
                 </Card>
             })}
-            </div>
+        </div>
         </div>
     )
 }

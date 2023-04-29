@@ -1,22 +1,20 @@
-.main{
-   
+.main{   
     background-color: #4F4557;
     height: 100vh;
     width: 100%;
-    
 }
 
 .banner-image-container {
-    height: 300px;
+    height: 35vh;
     overflow: hidden;
   }
   
 .banner-image {
     width: 100%;
     height: auto;
-    opacity: 50%;
+    opacity: 50%; 
+    filter: blur(3px);
 }
-  
 
 .info{
     display: inline-flex;
@@ -26,18 +24,39 @@
     text-justify: inter-word;
 }
 
+.image-and-fav{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .cover-image{
     margin-left: 10vw;
     margin-top: -20vh;
     position: relative;
     border-radius: 23px;
-    width: 270px;
-    height: 360px;
+    width: 18.8vw;
+    height: 45vh;
     opacity: 100%;
+    
+}
+
+.fav-button{
+  padding: 1vh 0.5vw;
+  margin-top: 3vh;
+  width: 18.8vw;
+  margin-left: 10vw;
+  border-radius: 25px;
+  border-color: transparent;
+  background-color: #F4EEE0;
+  font-size: 20px;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Gill Sans MT';
 }
 
 .anime-details{
-  padding-top: 10px;
+  padding-top: 2vh;
 }
 
 .anime-details h1{
