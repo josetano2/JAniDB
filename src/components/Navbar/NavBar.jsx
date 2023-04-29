@@ -14,7 +14,6 @@ export default function NavBar(){
         }
     }
 
-
     return (
         <div className="box">
             <Link to={'/'}><label className="logo">JAniDB😭</label></Link>
