@@ -1,0 +1,50 @@
+.main{
+   
+    background-color: #4F4557;
+    height: 100vh;
+    width: 100%;
+    
+}
+
+.banner-image-container {
+    height: 300px;
+    overflow: hidden;
+  }
+  
+.banner-image {
+    width: 100%;
+    height: auto;
+    opacity: 50%;
+}
+  
+
+.info{
+    display: inline-flex;
+    gap: 5vw;
+    margin-right: 10vw;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.cover-image{
+    margin-left: 10vw;
+    margin-top: -20vh;
+    position: relative;
+    border-radius: 23px;
+    width: 270px;
+    height: 360px;
+    opacity: 100%;
+}
+
+.anime-details{
+  padding-top: 10px;
+}
+
+.anime-details h1{
+  font-weight: bold;
+  color: #F4EEE0;
+}
+
+.description{
+  color: #d7d2c6;
+}
