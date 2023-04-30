@@ -1,6 +1,6 @@
 .main{   
     background-color: #4F4557;
-    height: 100vh;
+    height: 110vh;
     width: 100%;
 }
 
@@ -57,6 +57,8 @@
 
 .anime-details{
   padding-top: 2vh;
+  text-align: justify;
+  margin-bottom: 2vh;
 }
 
 .anime-details h1{

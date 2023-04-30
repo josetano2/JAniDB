@@ -17,6 +17,12 @@ export default function Details(){
     const [favorites, setFavorites] = useState([])
     const [isFavorited, setIsFavorited] = useState(false)
 
+    useEffect(() => {
+        const localFav = JSON.parse(localStorage.getItem('react-anime-favorites'))
+        setFavorites(localFav)
+        // setIsFavorited(localFav && data && data.Media ? localFav.some(item => item.Media.id === data.Media.id) : false)
+    }, [data])
+
     const saveToLocalStorage = (item) => {
         localStorage.setItem('react-anime-favorites', JSON.stringify(item))
     }
@@ -35,11 +41,6 @@ export default function Details(){
         saveToLocalStorage(newFavoriteList)
     }
 
-    useEffect(() => {
-        const localFav = JSON.parse(localStorage.getItem('react-anime-favorites'))
-        setFavorites(localFav)
-        setIsFavorited(localFav && data && data.Media ? localFav.some(item => item.Media.id === data.Media.id) : false)
-    }, [data])
 
     if(error) return <h1>{error.message}</h1>
     if(loading) return (
