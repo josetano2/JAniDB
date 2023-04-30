@@ -46,7 +46,8 @@
 
 .search-container {
     position: relative;
-    display: inline-block;
+    display: flex;
+    align-items: center;
     margin-top: 0.5vh;
   }
   
@@ -68,7 +69,6 @@
     background-color: #3c4454;
     padding-left: 3vw;
     color: #EAEAEA;
-    margin-top: 1.8vh;
 }
 
 .search-bar:focus{
