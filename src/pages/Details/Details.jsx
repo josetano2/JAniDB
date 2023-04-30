@@ -38,7 +38,7 @@ export default function Details(){
     useEffect(() => {
         const localFav = JSON.parse(localStorage.getItem('react-anime-favorites'))
         setFavorites(localFav)
-        setIsFavorited(data ? localFav.some(item => item.Media.id === data.Media.id) : false)
+        setIsFavorited(localFav && data && data.Media ? localFav.some(item => item.Media.id === data.Media.id) : false)
     }, [data])
 
     if(error) return <h1>{error.message}</h1>
