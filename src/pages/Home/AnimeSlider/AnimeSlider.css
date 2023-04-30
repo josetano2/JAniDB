@@ -1,10 +1,14 @@
 .container{
   width: 100%;
-  border: #4F4557;
+  border: #252A34;
   border-style: solid;
   border-width: 20px;
 }
 
+.container h1{
+  color: #EAEAEA;
+  margin: 1vw;
+}
 
 .slider{
     width: 100%;
@@ -37,11 +41,11 @@
   text-align: center;
   margin-top: 14vh;
   opacity: 100%;
-  color: #F4EEE0;
+  color: #EAEAEA;
 }
 
 .swiper-button-next, .swiper-button-prev{
-  color: #F4EEE0 !important;
+  color: #EAEAEA !important;
 }
 
 @media (max-width: 480px) {

@@ -23,6 +23,7 @@ export default function AnimeSlider(){
 
     return (
         <div className="container">
+          <h1>Currently Airing:</h1>
           <Swiper
             modules={[Navigation, EffectFade]}
             navigation

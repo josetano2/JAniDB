@@ -1,5 +1,5 @@
 .main{   
-    background-color: #4F4557;
+    background-color: #252A34;
     height: 110vh;
     width: 100%;
 }
@@ -48,7 +48,7 @@
   margin-left: 10vw;
   border-radius: 25px;
   border-color: transparent;
-  background-color: #F4EEE0;
+  background-color: #EAEAEA;
   font-size: 20px;
   align-items: center;
   justify-content: center;
@@ -63,9 +63,9 @@
 
 .anime-details h1{
   font-weight: bold;
-  color: #F4EEE0;
+  color: #EAEAEA;
 }
 
 .description{
-  color: #d7d2c6;
+  color: #d3d2d2;
 }

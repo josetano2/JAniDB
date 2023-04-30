@@ -10,11 +10,11 @@
 .box{
     position: sticky;
     width: 100%;
-    background: #393646;
+    background: #181b22;
 }
 
 .logo{
-    color: #F4EEE0;
+    color: #EAEAEA;
     font-size: 40px;
     padding: 0 6.5vw;
     line-height: 11vh;
@@ -27,7 +27,7 @@
 }
 
 .top-button{
-    color: #a48ba6;
+    color: #EAEAEA;
     font-size: 20px;
     font-family: Verdana;
     display: inline-block;
@@ -38,7 +38,7 @@
 }
 
 .top-button.active,.top-button:hover{
-    color: #F4EEE0;
+    color: #FF2E63;
     transition: .5s;
 }
 
@@ -54,7 +54,7 @@
     transform: translateY(-50%);
     width: 1.5vw;
     height: 2vh;
-    filter: invert(78%) sepia(4%) saturate(1805%) hue-rotate(248deg) brightness(75%) contrast(81%);
+    filter: invert(14%) sepia(29%) saturate(406%) hue-rotate(181deg) brightness(91%) contrast(93%);
 }
 
 .search-bar{
@@ -62,14 +62,20 @@
     outline: none;
     padding: 0.8vw;
     border-radius: 50px;
-    background-color: #2a2833;
+    background-color: #3c4454;
     padding-left: 3vw;
-    color: #a48ba6;
+    color: #EAEAEA;
 }
 
 .search-bar:focus{
     transition: 0.5s;
     border-style: solid;
-    border-color: #F4EEE0;
+    border-color: #FF2E63;
 }
+
+.search-container:focus-within .search-icon {
+    transition: 0.5s;
+    filter: invert(99%) sepia(2%) saturate(166%) hue-rotate(160deg) brightness(118%) contrast(84%);
+}
+  
 
