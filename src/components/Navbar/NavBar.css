@@ -23,12 +23,14 @@
 
 .right-align-button{
     float: right;
+    display: inline-flex;
     margin-right: 1vw;
+    margin-top: 1vh;
 }
 
 .top-button{
     color: #EAEAEA;
-    font-size: 20px;
+    font-size: 40px;
     font-family: Verdana;
     display: inline-block;
     margin: 0 4vw;
@@ -45,6 +47,7 @@
 .search-container {
     position: relative;
     display: inline-block;
+    margin-top: 0.5vh;
   }
   
 .search-icon {
@@ -60,11 +63,12 @@
 .search-bar{
     border-color: transparent;
     outline: none;
-    padding: 0.8vw;
+    padding: 0.6vw;
     border-radius: 50px;
     background-color: #3c4454;
     padding-left: 3vw;
     color: #EAEAEA;
+    margin-top: 1.8vh;
 }
 
 .search-bar:focus{
@@ -77,5 +81,3 @@
     transition: 0.5s;
     filter: invert(99%) sepia(2%) saturate(166%) hue-rotate(160deg) brightness(118%) contrast(84%);
 }
-  
-

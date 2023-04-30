@@ -5,6 +5,12 @@ import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
 import NavBar from "../../components/Navbar/NavBar"
 import "./Details.css"
 import { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react"
+import "swiper/css"
+import "swiper/css/navigation"
+import "swiper/css/effect-fade"
+import "swiper/css/scrollbar"
+import { EffectFade, Navigation, Scrollbar } from "swiper";
 
 export default function Details(){
 
@@ -79,17 +85,35 @@ export default function Details(){
             </div>
             <div className="bottom-half">
                 <h1>Characters</h1>
+                <Swiper
+                modules={[Navigation, EffectFade, Scrollbar]}
+                navigation={{
+                    nextEl: '.swiper-button-next-custom', 
+                    prevEl: '.swiper-button-prev-custom'
+                }}
+                effect
+                speed={800}
+                slidesPerView={7}
+                scrollbar={{
+                    el: '.swiper-scrollbar',
+                    draggable: true,
+                }}
+                >
                 <div className="character-container">
-                    {data.Media.characters.edges.slice(0, 7).map((character) => {
+                    {data.Media.characters.edges.map((character) => {
                         return (
+                            <SwiperSlide>
                             <div className="character-card">
                                 <img src={character.node.image.large} alt="NULL" className="character-image"/>
-                                <br />
-                                {character.node.name.full}
+                                <div className="gradient-character"></div>
+                                <div className="name-box">{character.node.name.full}</div>
                             </div>
+                            </SwiperSlide>
                         )
                     })}
                 </div>
+                <div className="swiper-scrollbar character-scrollbar"></div>
+                </Swiper>
             </div>
         </div>
         </div>
