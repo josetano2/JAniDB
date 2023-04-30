@@ -59,16 +59,37 @@ export default function Details(){
             <img className="banner-image" src={data.Media.bannerImage} alt="" />
         </div>
         <div className="info">
-            <div className="image-and-fav">
-                <img className="cover-image" src={data.Media.coverImage.large} alt="" />
-                <button className="fav-button" 
-                onClick={() => isFavorited ? removeFav(data) : addFav(data)}
-                >{isFavorited ? '❤️ Favorite' : '🤍 Favorite'}</button>
+            <div className="upper-half">
+                <div className="image-and-fav">
+                    <img className="cover-image" src={data.Media.coverImage.large} alt="" />
+                    <button className="fav-button" 
+                    onClick={() => isFavorited ? removeFav(data) : addFav(data)}
+                    >{isFavorited ? '❤️ Favorite' : '🤍 Favorite'}</button>
+                </div>
+                <div className="anime-details">
+                    <h1>{data.Media.title.english ? data.Media.title.english : data.Media.title.native}</h1>
+                    <br />
+                    {data.Media.genres.map((animeGenre) => {
+                        return(
+                            <div className="genre">{animeGenre}</div>
+                            )
+                        })}
+                    <div dangerouslySetInnerHTML={{ __html: data.Media.description }} className="description    "></div>
+                </div>
             </div>
-            <div className="anime-details">
-                <h1>{data.Media.title.english ? data.Media.title.english : data.Media.title.native}</h1>
-                <br />
-                <div dangerouslySetInnerHTML={{ __html: data.Media.description }} className="description    "></div>
+            <div className="bottom-half">
+                <h1>Characters</h1>
+                <div className="character-container">
+                    {data.Media.characters.edges.slice(0, 7).map((character) => {
+                        return (
+                            <div className="character-card">
+                                <img src={character.node.image.large} alt="NULL" className="character-image"/>
+                                <br />
+                                {character.node.name.full}
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
         </div>
         </div>

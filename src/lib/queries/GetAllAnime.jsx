@@ -37,6 +37,20 @@ query getDetails($idNum: Int){
       coverImage {
         large
       }
+      genres
+      characters(sort: FAVOURITES_DESC) {
+        edges {
+          id
+          node {
+            name {
+              full
+            }
+            image {
+              large
+            }
+          }
+        }
+      }
     }
 }
 `

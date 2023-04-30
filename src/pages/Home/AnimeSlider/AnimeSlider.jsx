@@ -3,9 +3,10 @@ import { useQuery } from "@apollo/client"
 import { GET_AIRING_ANIME } from "../../../lib/queries/GetAllAnime"
 import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/css"
-import { Navigation, EffectFade } from "swiper"
+import { Navigation, EffectFade, Pagination } from "swiper"
 import "swiper/css/navigation"
 import "swiper/css/effect-fade"
+import "swiper/css/pagination"
 import Card, { CardBanner } from "../../../components/Card"
 import { Link } from "react-router-dom"
 
@@ -25,13 +26,17 @@ export default function AnimeSlider(){
         <div className="container">
           <h1>Currently Airing:</h1>
           <Swiper
-            modules={[Navigation, EffectFade]}
+            modules={[Navigation, EffectFade, Pagination]}
             navigation
             effect
             speed={800}
             slidesPerView={1}
             loop
             className="slider"
+            pagination={{
+              el: '.swiper-pagination',
+              clickable: true
+            }}
           >
             <div className="banner">
               {data.Page.media.map((anime) => {
@@ -55,6 +60,4 @@ export default function AnimeSlider(){
           </Swiper>
         </div>
       );
-      
-
 }
