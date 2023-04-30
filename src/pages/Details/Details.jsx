@@ -19,8 +19,10 @@ export default function Details(){
 
     useEffect(() => {
         const localFav = JSON.parse(localStorage.getItem('react-anime-favorites'))
-        setFavorites(localFav)
-        // setIsFavorited(localFav && data && data.Media ? localFav.some(item => item.Media.id === data.Media.id) : false)
+        if(localFav){
+            setFavorites(localFav)
+            setIsFavorited(localFav && data && data.Media ? localFav.some(item => item.Media.id === data.Media.id) : false)
+        }
     }, [data])
 
     const saveToLocalStorage = (item) => {
@@ -60,7 +62,7 @@ export default function Details(){
             <div className="image-and-fav">
                 <img className="cover-image" src={data.Media.coverImage.large} alt="" />
                 <button className="fav-button" 
-                onClick={isFavorited ? () => removeFav(data) : () => addFav(data)}
+                onClick={() => isFavorited ? removeFav(data) : addFav(data)}
                 >{isFavorited ? '❤️ Favorite' : '🤍 Favorite'}</button>
             </div>
             <div className="anime-details">
