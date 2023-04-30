@@ -18,7 +18,7 @@ export default function Favorites(){
         <div className="bg">
             <NavBar/>
             <div className="grids">
-            {favorites.map((anime) => {
+            {favorites?.map((anime) => {
                 return <Card>
                     <Link to={`/${anime.Media.id}`} className="white-font">
                     <div className="image-container">
