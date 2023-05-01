@@ -9,8 +9,17 @@ import "swiper/css/navigation"
 import "swiper/css/effect-fade"
 import "swiper/css/scrollbar"
 import { EffectFade, Navigation, Scrollbar } from "swiper";
+import { useEffect, useState } from "react"
 
 export default function RomCom(){
+
+    const [totalSlides, setTotalSlides] = useState(8)
+    
+    useEffect(() => {
+        const maxWidth = 440;
+        const temp = window.innerWidth <= maxWidth ? 3 : 8;
+        setTotalSlides(temp)
+    }, [])
 
     const {loading, data, error} = useQuery(GET_ROMCOM_ANIME, {
         variables:{
@@ -33,7 +42,7 @@ export default function RomCom(){
         }}
         effect
         speed={800}
-        slidesPerView={7}
+        slidesPerView={totalSlides}
         scrollbar={{
             el: '.swiper-scrollbar',
             draggable: true,

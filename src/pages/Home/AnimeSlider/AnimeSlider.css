@@ -50,9 +50,16 @@
   color: #EAEAEA !important;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 440px) {
+  .container h1{
+    font-size: 21px;
+  }
   .slider-title {
     font-size: 12px;
     margin-top: 2vh;
+  }
+  .container{
+    border-width: 21px;
+    margin-top: 1vw;
   }
 }

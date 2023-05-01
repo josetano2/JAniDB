@@ -6,7 +6,7 @@
 
 .grids-fav{
     display: grid;
-    grid-template-columns: repeat(6, 14vw);
+    grid-template-columns: repeat(7, 13vw);
     margin-top: 3vh;
     margin-left: 5vw;
     grid-auto-rows: 24vw; 
@@ -15,8 +15,8 @@
 }
 
 .image-container-fav{
-    width: 80%;
-    height: 62%;
+    width: 90%;
+    height: 70%;
     position: relative;
     transition: transform 0.2s;
     margin-bottom: 2vh;
@@ -73,9 +73,8 @@
 @media (max-width: 480px) {
     .grids-fav {
         grid-template-columns: repeat(2, 45vw);
-        margin-left: 3vw;
+        margin-left: 7vw;
         margin-right: 3vw;
         grid-auto-rows: 40vh;
-        gap: 0.5vw;  
     }
 }

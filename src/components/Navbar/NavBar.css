@@ -49,7 +49,7 @@
     display: flex;
     align-items: center;
     margin-top: 0.5vh;
-  }
+}
   
 .search-icon {
     position: absolute;
@@ -80,4 +80,35 @@
 .search-container:focus-within .search-icon {
     transition: 0.5s;
     filter: invert(99%) sepia(2%) saturate(166%) hue-rotate(160deg) brightness(118%) contrast(84%);
+}
+
+@media (max-width: 440px){
+    .logo{
+        font-size: 20px;
+        line-height: 7vh;
+    }
+    .top-button{
+        font-size: 13px;
+        line-height: 0vh;
+    }
+    .search-container{
+        width: fit-content;
+    }
+    .search-bar{
+        width: 28vw;
+        padding-left: 5vw;
+    }
+    .search-bar::placeholder{
+        font-size: 11px;
+    }
+    .box{
+        justify-content: center;
+    }
+    .right-align-button{
+        line-height: 5vh;
+    }
+    .search-icon {
+        width: 2.5vw;
+        height: 3vh;
+    }
 }

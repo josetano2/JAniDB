@@ -84,6 +84,7 @@
     border-bottom-right-radius: 10px;
     font-size: 15px;
     text-align: center;
+    font-weight: bold;
 }
 
 .image-container:hover .anime-image, 
@@ -95,12 +96,23 @@
     color: #EAEAEA;
 }
 
-@media (max-width: 480px) {
-    .grids {
-        grid-template-columns: repeat(2, 45vw);
-        margin-left: 3vw;
-        margin-right: 3vw;
-        grid-auto-rows: 40vh;
-        gap: 0.5vw;  
+@media (max-width: 440px) {
+    .image-container{
+        width: 28vw;
+        height: 21vh;
+    }
+    .gradient{
+        transform: translateY(6.35vh);
+    }
+    .info-box{
+        font-size: 9px;
+        padding-bottom: 0.5vh;
+    }
+    .swiper-slide-container{
+        margin-bottom: 0.5vh;
+    }
+    .title{
+        margin-top: 3vh;
+        font-size: 21px;
     }
 }

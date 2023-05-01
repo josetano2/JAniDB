@@ -3,7 +3,7 @@ import {gql} from "@apollo/client"
 export const GET_ALL_ANIME = gql`
 query getAllAnime($page: Int, $perPage: Int){
     Page(page: $page, perPage: $perPage){
-      media(type: ANIME, sort: SCORE_DESC, isAdult: false){
+      media(type: ANIME, sort: TRENDING_DESC, isAdult: false){
         id
         title {
           english
@@ -79,6 +79,25 @@ query getRomComAnime($page: Int, $perPage: Int){
   }
 }
 `
+export const GET_MUSIC_ANIME = gql `
+query getRomComAnime($page: Int, $perPage: Int){
+  Page(page: $page, perPage: $perPage){
+    media(type: ANIME, sort: POPULARITY_DESC, isAdult: false, genre_in: "Music"){
+      id
+      title {
+        english
+        native
+      }
+      averageScore
+      episodes
+      coverImage {
+        large
+      }
+      description
+    }
+  }
+}
+`
 
 export const GET_DETAILS = gql`
 query getDetails($idNum: Int){
@@ -97,6 +116,20 @@ query getDetails($idNum: Int){
       coverImage {
         large
       }
+      episodes
+      startDate {
+        year
+        month
+        day
+      }
+    	endDate {
+    	  year
+    	  month
+    	  day
+    	}
+      season
+      status
+      favourites
       genres
       characters(sort: FAVOURITES_DESC) {
         edges {

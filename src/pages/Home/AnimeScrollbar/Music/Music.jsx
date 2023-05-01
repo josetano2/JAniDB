@@ -1,5 +1,5 @@
 import { useQuery } from "@apollo/client"
-import { GET_ALL_ANIME } from "../../../../lib/queries/GetAllAnime"
+import { GET_MUSIC_ANIME } from "../../../../lib/queries/GetAllAnime"
 import { Link } from "react-router-dom"
 import "../../AnimeGrids/AnimeGrids.css"
 import Card, { CardDetail, CardImage } from "../../../../components/Card"
@@ -9,13 +9,22 @@ import "swiper/css/navigation"
 import "swiper/css/effect-fade"
 import "swiper/css/scrollbar"
 import { EffectFade, Navigation, Scrollbar } from "swiper";
+import { useEffect, useState } from "react"
 
-export default function Romance(){
+export default function Music(){
 
-    const {loading, data, error} = useQuery(GET_ALL_ANIME, {
+    const [totalSlides, setTotalSlides] = useState(8)
+    
+    useEffect(() => {
+        const maxWidth = 440;
+        const temp = window.innerWidth <= maxWidth ? 3 : 8;
+        setTotalSlides(temp)
+    }, [])
+
+    const {loading, data, error} = useQuery(GET_MUSIC_ANIME, {
         variables:{
             page: 1,
-            perPage: 50,
+            perPage: 20,
         }
     })
 
@@ -24,7 +33,7 @@ export default function Romance(){
 
     return (
         <div className="whole-container">
-        <h1 className="title">Top 50</h1>
+        <h1 className="title">Music</h1>
         <Swiper
         modules={[Navigation, EffectFade, Scrollbar]}
         navigation={{
@@ -33,7 +42,7 @@ export default function Romance(){
         }}
         effect
         speed={800}
-        slidesPerView={7}
+        slidesPerView={totalSlides}
         scrollbar={{
             el: '.swiper-scrollbar',
             draggable: true,

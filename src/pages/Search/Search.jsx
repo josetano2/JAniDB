@@ -1,4 +1,3 @@
-import "../Home/AnimeGrids/AnimeGrids.css"
 import { useQuery } from "@apollo/client"
 import NavBar from "../../components/Navbar/NavBar"
 import { GET_SEARCH_ANIME } from "../../lib/queries/GetAllAnime"
@@ -28,15 +27,15 @@ export default function Search(){
     return (
         <div className="bg">
             <NavBar/>
-            <div className="grids">
+            <h1 className="h1-fav">Search Results:</h1>
+            <div className="grids-fav">
             {data.Page.media.map((anime) => {
-                return <Card>
+                return <Card className="card-container">
                     <Link to={`/${anime.id}`} className="white-font">
-                    <div className="image-container">
-                        <CardImage className="anime-image" src={anime.coverImage.large}/>
-                        <div className="info-box">Score: {anime.averageScore}</div>
-                    </div>
-                    {anime.title.english ? (
+                    <div className="image-container-fav">
+                        <CardImage className="anime-image-fav" src={anime.coverImage.large}/>
+                        <div className="gradient-fav"></div>
+                        <div className="info-box-fav">{anime.title.english ? (
                         <CardDetail>
                             <div>{anime.title.english}</div>
                         </CardDetail>
@@ -44,7 +43,8 @@ export default function Search(){
                         <CardDetail>
                             <div>{anime.title.native}</div>
                         </CardDetail>
-                        )}
+                        )}</div>
+                    </div>
                     </Link>
                 </Card>
             })}

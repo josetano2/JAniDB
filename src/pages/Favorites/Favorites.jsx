@@ -14,7 +14,7 @@ export default function Favorites(){
     }, [])
 
     
-    if(favorites.length !== 0){
+    if(favorites && favorites.length !== 0){
 
         return(
             <div className="bg">
@@ -22,7 +22,7 @@ export default function Favorites(){
                 <h1 className="h1-fav">Favorites</h1>
                 <div className="grids-fav">
                 {favorites?.map((anime) => {
-                    return <Card>
+                    return <Card className="card-container">
                         <Link to={`/${anime.Media.id}`} className="white-font">
                         <div className="image-container-fav">
                             <CardImage className="anime-image-fav" src={anime.Media.coverImage.large}/>

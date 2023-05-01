@@ -23,6 +23,7 @@
 .upper-half{
   display: inline-flex;
   gap: 5vw;
+  margin-left: -24vw;
   margin-right: 10vw;
   text-align: justify;
   text-justify: inter-word;
@@ -38,7 +39,7 @@
 }
 
 .cover-image{
-    margin-left: 10vw;
+    margin-left: 34vw;
     margin-top: -20vh;
     position: relative;   
     border-radius: 23px;
@@ -51,25 +52,49 @@
   padding: 1vh 0.5vw;
   margin-top: 3vh;
   width: 13vw;
-  margin-left: 10vw;
+  margin-left: 34vw;
   border-radius: 25px;
   border-color: transparent;
   background-color: #EAEAEA;
   font-size: 20px;
   align-items: center;
   justify-content: center;
-  font-family: 'Gill Sans MT';
+  font-family: Verdana;
+  color: #252A34;
 }
 
 .anime-details{
   padding-top: 2vh;
   text-align: justify;
   margin-bottom: 2vh;
+  margin-right: 10vh;
 }
 
 .anime-details h1{
   font-weight: bold;
   color: #EAEAEA;
+}
+
+.anime-info{
+  display: flex;
+  font-family: Verdana;
+  color: #d3d2d2;
+}
+
+.left-info {
+  flex: 1;
+}
+
+.right-info {
+  flex: 1;
+}
+
+.anime-info div{
+  margin-bottom: 1.8vh;
+}
+
+.anime-info h1{
+  font-size: 21px;
 }
 
 .genre{
@@ -81,6 +106,18 @@
   border-width: 0.2ch;
   margin-right: 1vw;
   margin-bottom: 2vh;
+}
+
+.description-container{
+  margin-left: 10vw;
+  margin-right: 11vw;
+  margin-bottom: 5vh;
+  text-align: justify;
+}
+
+.description-container h1{
+  margin-bottom: 1vh;
+  color: #EAEAEA;
 }
 
 .description{
@@ -151,4 +188,57 @@
 
 .swiper-scrollbar-drag{
   background-color: #EAEAEA !important;
+}
+
+@media (max-width: 440px) {
+  .banner-image-container {
+    height: 11vh;
+  }
+  .banner-image {
+    opacity: 800%; 
+    filter: brightness(60%) contrast(90%) blur(1px);
+  }
+  .cover-image{
+    width: 38vw;
+    height: 29vh;
+    margin-left: 6vw;
+  }
+  .image-and-fav{
+    margin-top: 22vh;
+  }
+  .fav-button{
+    width: 37vw;
+    margin-left: 6vw;
+  }
+  .genre{
+    font-size: 11px;
+    padding: 0.8vw;
+    margin-right: 4vw;
+    border-width: 0.3ch;
+  }
+  .anime-details h1{
+    font-size: 15px;
+    text-align: left;
+  }
+  .description{
+    font-size: 13px;
+  }
+  .description-container{
+    margin-top: 3vh;
+  }
+  h1{
+    font-size: 21px;
+  }
+  .anime-info{
+    font-size: 13px;
+  }
+  .anime-info div{
+    margin-bottom: 0.5vh;
+  }
+  .right-info h1{
+    text-align: right;
+  }
+  .right-info{
+    text-align: right;
+  }
 }

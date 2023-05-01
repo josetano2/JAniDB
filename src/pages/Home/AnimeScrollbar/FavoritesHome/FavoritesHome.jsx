@@ -12,13 +12,21 @@ import { useEffect, useState } from "react"
 export default function FavoritesHome(){
 
     const [favorites, setFavorites] = useState([])
-
+    
     useEffect(() => {
         const animeFavorites = JSON.parse(localStorage.getItem('react-anime-favorites'))
         setFavorites(animeFavorites)
     }, [])
+    
+    const [totalSlides, setTotalSlides] = useState(8)
 
-    if(favorites.length !== 0){
+    useEffect(() => {
+        const maxWidth = 440;
+        const temp = window.innerWidth <= maxWidth ? 3 : 8;
+        setTotalSlides(temp)
+    }, [])
+
+    if(favorites && favorites.length !== 0){
         return (
             <div className="whole-container">
             <h1 className="title">Favorites</h1>
@@ -30,7 +38,7 @@ export default function FavoritesHome(){
             }}
             effect
             speed={800}
-            slidesPerView={7}
+            slidesPerView={totalSlides}
             scrollbar={{
                 el: '.swiper-scrollbar',
                 draggable: true,

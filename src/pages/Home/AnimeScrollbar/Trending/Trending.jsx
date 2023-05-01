@@ -1,5 +1,5 @@
 import { useQuery } from "@apollo/client"
-import { GET_ROMANCE_ANIME } from "../../../../lib/queries/GetAllAnime"
+import { GET_ALL_ANIME } from "../../../../lib/queries/GetAllAnime"
 import { Link } from "react-router-dom"
 import "../../AnimeGrids/AnimeGrids.css"
 import Card, { CardDetail, CardImage } from "../../../../components/Card"
@@ -11,7 +11,7 @@ import "swiper/css/scrollbar"
 import { EffectFade, Navigation, Scrollbar } from "swiper";
 import { useEffect, useState } from "react"
 
-export default function Romance(){
+export default function Trending(){
 
     const [totalSlides, setTotalSlides] = useState(8)
     
@@ -21,10 +21,10 @@ export default function Romance(){
         setTotalSlides(temp)
     }, [])
 
-    const {loading, data, error} = useQuery(GET_ROMANCE_ANIME, {
+    const {loading, data, error} = useQuery(GET_ALL_ANIME, {
         variables:{
             page: 1,
-            perPage: 20,
+            perPage: 50,
         }
     })
 
@@ -33,7 +33,7 @@ export default function Romance(){
 
     return (
         <div className="whole-container">
-        <h1 className="title">Drama</h1>
+        <h1 className="title">Trending Now!</h1>
         <Swiper
         modules={[Navigation, EffectFade, Scrollbar]}
         navigation={{

@@ -70,18 +70,34 @@ export default function Details(){
                     <img className="cover-image" src={data.Media.coverImage.large} alt="" />
                     <button className="fav-button" 
                     onClick={() => isFavorited ? removeFav(data) : addFav(data)}
-                    >{isFavorited ? '❤️ Favorite' : '🤍 Favorite'}</button>
+                    >{isFavorited ? 'Favorite' : 'Unfavorite'}</button>
                 </div>
                 <div className="anime-details">
                     <h1>{data.Media.title.english ? data.Media.title.english : data.Media.title.native}</h1>
                     <br />
-                    {data.Media.genres.map((animeGenre) => {
+                    {data.Media.genres.slice(0, 4).map((animeGenre) => {
                         return(
                             <div className="genre">{animeGenre}</div>
                             )
                         })}
-                    <div dangerouslySetInnerHTML={{ __html: data.Media.description }} className="description    "></div>
+                    <div className="anime-info">
+                        <div className="left-info">
+                            <div><h1>Score</h1> {data.Media.averageScore}%</div>
+                            <div><h1>Episodes</h1> {data.Media.episodes ? data.Media.episodes : "?"}</div>
+                            <div><h1>Start Date</h1> {data.Media.startDate.day}/{data.Media.startDate.month}/{data.Media.startDate.year}</div>
+                            <div><h1>End Date</h1> {data.Media.endDate.day}/{data.Media.endDate.month}/{data.Media.endDate.year}</div>
+                        </div>
+                        <div className="right-info">
+                            <div><h1>Season</h1> {data.Media.season}</div>
+                            <div><h1>Status</h1> {data.Media.status}</div>
+                            <div><h1>Favorites</h1> {data.Media.favourites}</div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <div className="description-container">
+                <h1>Description</h1>
+                <div dangerouslySetInnerHTML={{ __html: data.Media.description }} className="description    "></div>                 
             </div>
             <div className="bottom-half">
                 <h1>Characters</h1>
