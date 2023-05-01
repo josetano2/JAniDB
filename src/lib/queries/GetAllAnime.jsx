@@ -20,6 +20,66 @@ query getAllAnime($page: Int, $perPage: Int){
   }
 `
 
+export const GET_ROMANCE_ANIME = gql `
+query getRomanceAnime($page: Int, $perPage: Int){
+  Page(page: $page, perPage: $perPage){
+    media(type: ANIME, sort: POPULARITY_DESC, isAdult: false, genre_in: ["Romance", "Drama"], genre_not_in: ["Action", "Comedy"]){
+      id
+      title {
+        english
+        native
+      }
+      averageScore
+      episodes
+      coverImage {
+        large
+      }
+      description
+    }
+  }
+}
+`
+
+export const GET_ROMCOM_ANIME = gql `
+query getRomComAnime($page: Int, $perPage: Int){
+  Page(page: $page, perPage: $perPage){
+    media(type: ANIME, sort: SCORE_DESC, isAdult: false, genre_in: ["Romance", "Comedy"], genre_not_in: "Drama"){
+      id
+      title {
+        english
+        native
+      }
+      averageScore
+      episodes
+      coverImage {
+        large
+      }
+      description
+    }
+  }
+}
+`
+
+export const GET_ACTION_ANIME = gql `
+query getRomComAnime($page: Int, $perPage: Int){
+  Page(page: $page, perPage: $perPage){
+    media(type: ANIME, sort: POPULARITY_DESC, isAdult: false, genre_in: "Action"){
+      id
+      title {
+        english
+        native
+      }
+      averageScore
+      episodes
+      coverImage {
+        large
+      }
+      description
+    }
+  }
+}
+`
+
 export const GET_DETAILS = gql`
 query getDetails($idNum: Int){
     Media(id: $idNum){

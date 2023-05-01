@@ -27,7 +27,7 @@ export default function NavBar(){
                     onKeyDown={handleKeyDown}
                     />
                 </div>
-                <Link to={'/favorites'}><p className="top-button">❤</p></Link>
+                <Link to={'/favorites'}><p className="top-button">Favorites</p></Link>
             </div>
         </div>
     )

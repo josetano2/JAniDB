@@ -107,7 +107,7 @@
 
 .character-card{
   width: 10vw;
-  height: 29vh;
+  height: 28.5vh;
   position: relative;
   color: #EAEAEA;
   margin-bottom: 3vh;
@@ -118,8 +118,8 @@
   height: 100%;
   border-radius: 25px;
   object-fit: cover;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
 }
 
 .gradient-character{
@@ -128,14 +128,16 @@
   height: 70%;
   top: 0;
   left: 0;
-  transform: translateY(30%);
+  transform: translateY(43%);
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
   background: linear-gradient(rgba(255, 0, 0, 0), #181b22);
   opacity: 80%;
 }
 
 .name-box{
   position: absolute;
-  background: #181b22;
+  /* background: #181b22; */
   width: 10vw;
   padding: 0.5vw;
   bottom: 0;
