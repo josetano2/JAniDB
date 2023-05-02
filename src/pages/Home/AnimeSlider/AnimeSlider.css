@@ -50,7 +50,7 @@
   color: #EAEAEA !important;
 }
 
-@media (max-width: 440px) {
+@media (max-width: 480px) {
   .container h1{
     font-size: 21px;
   }

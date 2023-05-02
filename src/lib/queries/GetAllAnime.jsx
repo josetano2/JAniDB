@@ -148,6 +148,32 @@ query getDetails($idNum: Int){
 }
 `
 
+export const GET_SIMILAR_ANIME = gql `
+query getSimilarAnime($idNum: Int){
+  Media(id: $idNum){
+    recommendations{
+      nodes{
+        mediaRecommendation{
+          id
+          title {
+            romaji
+            english
+            native
+            userPreferred
+          }
+          coverImage {
+            extraLarge
+            large
+            medium
+            color
+          }
+        }
+      }
+    }
+  }
+}
+`
+
 export const GET_AIRING_ANIME = gql`
 query getAiringAnime($page: Int, $perPage: Int){
   Page(page: $page, perPage: $perPage){

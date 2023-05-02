@@ -82,7 +82,7 @@
     filter: invert(99%) sepia(2%) saturate(166%) hue-rotate(160deg) brightness(118%) contrast(84%);
 }
 
-@media (max-width: 440px){
+@media (max-width: 480px){
     .logo{
         font-size: 20px;
         line-height: 7vh;

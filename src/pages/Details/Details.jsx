@@ -11,6 +11,7 @@ import "swiper/css/navigation"
 import "swiper/css/effect-fade"
 import "swiper/css/scrollbar"
 import { EffectFade, Navigation, Scrollbar } from "swiper";
+import ExploreMore from "./ExploreMore/ExploreMore";
 
 export default function Details(){
 
@@ -30,6 +31,14 @@ export default function Details(){
             setIsFavorited(localFav && data && data.Media ? localFav.some(item => item.Media.id === data.Media.id) : false)
         }
     }, [data])
+
+    const [totalSlides, setTotalSlides] = useState(7)
+
+    useEffect(() => {
+        const maxWidth = 440;
+        const temp = window.innerWidth <= maxWidth ? 3 : 7;
+        setTotalSlides(temp)
+    }, [])
 
     const saveToLocalStorage = (item) => {
         localStorage.setItem('react-anime-favorites', JSON.stringify(item))
@@ -59,7 +68,7 @@ export default function Details(){
     )
 
    return(
-        <div className="main">
+        <div className="main bg">
         <NavBar/>
         <div className="banner-image-container">
             <img className="banner-image" src={data.Media.bannerImage} alt="" />
@@ -70,7 +79,7 @@ export default function Details(){
                     <img className="cover-image" src={data.Media.coverImage.large} alt="" />
                     <button className="fav-button" 
                     onClick={() => isFavorited ? removeFav(data) : addFav(data)}
-                    >{isFavorited ? 'Favorite' : 'Unfavorite'}</button>
+                    >{isFavorited ? 'Unavorite' : 'Favorite'}</button>
                 </div>
                 <div className="anime-details">
                     <h1>{data.Media.title.english ? data.Media.title.english : data.Media.title.native}</h1>
@@ -97,7 +106,7 @@ export default function Details(){
             </div>
             <div className="description-container">
                 <h1>Description</h1>
-                <div dangerouslySetInnerHTML={{ __html: data.Media.description }} className="description    "></div>                 
+                <div dangerouslySetInnerHTML={{ __html: data.Media.description }} className="description"></div>                 
             </div>
             <div className="bottom-half">
                 <h1>Characters</h1>
@@ -109,7 +118,7 @@ export default function Details(){
                 }}
                 effect
                 speed={800}
-                slidesPerView={7}
+                slidesPerView={totalSlides}
                 scrollbar={{
                     el: '.swiper-scrollbar',
                     draggable: true,
@@ -130,6 +139,9 @@ export default function Details(){
                 </div>
                 <div className="swiper-scrollbar character-scrollbar"></div>
                 </Swiper>
+            </div>
+            <div className="explore-container">
+                <ExploreMore/>
             </div>
         </div>
         </div>

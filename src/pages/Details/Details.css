@@ -1,7 +1,7 @@
 .main{   
     background-color: #252A34;
-    height: 100%;
-    width: 100%;
+    min-height: 100vh;
+    max-width: 100%;
 }
 
 .banner-image-container {
@@ -25,10 +25,10 @@
   gap: 5vw;
   margin-left: -24vw;
   margin-right: 10vw;
-  text-align: justify;
-  text-justify: inter-word;
   height: 50vh;
   margin-bottom: -5vh;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .image-and-fav{
@@ -67,7 +67,7 @@
   padding-top: 2vh;
   text-align: justify;
   margin-bottom: 2vh;
-  margin-right: 10vh;
+  margin-right: 61vh;
 }
 
 .anime-details h1{
@@ -148,6 +148,7 @@
   position: relative;
   color: #EAEAEA;
   margin-bottom: 3vh;
+  align-items: center;
 }
 
 .character-image{
@@ -173,15 +174,16 @@
 }
 
 .name-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  /* background: #181b22; */
   width: 10vw;
   padding: 0.5vw;
   bottom: 0;
   left: 0;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
-  /* background-color: rgba(0, 0, 0, 0.5); */
   font-size: 15px;
   text-align: center;
 }
@@ -190,25 +192,30 @@
   background-color: #EAEAEA !important;
 }
 
-@media (max-width: 440px) {
+.explore-container{
+  margin: 0 5vw;
+}
+
+@media (max-width: 480px) {
   .banner-image-container {
     height: 11vh;
   }
   .banner-image {
-    opacity: 800%; 
+    opacity: 100%; 
     filter: brightness(60%) contrast(90%) blur(1px);
   }
   .cover-image{
-    width: 38vw;
-    height: 29vh;
-    margin-left: 6vw;
+    width: 39vw;
+    height: 28vh;
+    margin-left: 4vw;
   }
   .image-and-fav{
     margin-top: 22vh;
+    margin-left: 27vw;
   }
   .fav-button{
     width: 37vw;
-    margin-left: 6vw;
+    margin-left: 5vw;
   }
   .genre{
     font-size: 11px;
@@ -224,7 +231,9 @@
     font-size: 13px;
   }
   .description-container{
-    margin-top: 3vh;
+    margin-top: 1vh;
+    margin-left: 7vw;
+    margin-right: 7vw;
   }
   h1{
     font-size: 21px;
@@ -240,5 +249,35 @@
   }
   .right-info{
     text-align: right;
+  }
+  .anime-details{
+    margin-right: 0;
+  }
+  .bottom-half{
+    margin-left: 7vw;
+    margin-right: 7vw
+  }
+  .character-card{
+    padding-left: 1vw;
+    width: 27vw;
+    height: 18vh;
+  }
+  .character-image{
+    border-radius: 15px;
+  }
+  .gradient-character{
+    width: 97%;
+    margin-left: 1vw;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+  .name-box{
+    font-size: 10px;
+    margin-left: 9vw;
+  }
+  .explore-container{
+    margin: 0;
+    margin-top: -5vh;
+    margin-left: 2vw;
   }
 }

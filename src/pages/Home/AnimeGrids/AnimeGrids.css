@@ -96,7 +96,7 @@
     color: #EAEAEA;
 }
 
-@media (max-width: 440px) {
+@media (max-width: 480px) {
     .image-container{
         width: 28vw;
         height: 21vh;

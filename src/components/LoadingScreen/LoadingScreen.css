@@ -57,3 +57,9 @@
     left: unset;
    }
 }
+
+@media (max-width: 480px){
+   .loader {
+      width: 40vw;
+   }
+}
