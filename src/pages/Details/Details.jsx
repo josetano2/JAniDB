@@ -37,6 +37,7 @@ export default function Details(){
     useEffect(() => {
         const maxWidth = 440;
         const temp = window.innerWidth <= maxWidth ? 3 : 7;
+        window.scrollTo(0, 0)
         setTotalSlides(temp)
     }, [])
 
@@ -77,9 +78,11 @@ export default function Details(){
             <div className="upper-half">
                 <div className="image-and-fav">
                     <img className="cover-image" src={data.Media.coverImage.large} alt="" />
-                    <button className="fav-button" 
-                    onClick={() => isFavorited ? removeFav(data) : addFav(data)}
-                    >{isFavorited ? 'Unavorite' : 'Favorite'}</button>
+                    <div className="fav-container">
+                        <button className={isFavorited ? "fav-button red-button" : "fav-button white-button"} 
+                        onClick={() => isFavorited ? removeFav(data) : addFav(data)}
+                        >{isFavorited ? 'Unfavorite' : 'Favorite'}</button>
+                    </div>
                 </div>
                 <div className="anime-details">
                     <h1>{data.Media.title.english ? data.Media.title.english : data.Media.title.native}</h1>

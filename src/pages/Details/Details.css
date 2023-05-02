@@ -39,29 +39,60 @@
 }
 
 .cover-image{
-    margin-left: 34vw;
-    margin-top: -20vh;
-    position: relative;   
-    border-radius: 23px;
-    width: 13vw;
-    height: 37vh;
-    opacity: 100%;
+  margin-left: 34vw;
+  margin-top: -20vh;
+  position: relative;   
+  border-radius: 23px;
+  width: 13vw;
+  height: 37vh;
+  opacity: 100%;
 }
+  
+.fav-container{
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
 
 .fav-button{
   padding: 1vh 0.5vw;
   margin-top: 3vh;
   width: 13vw;
   margin-left: 34vw;
-  border-radius: 25px;
   border-color: transparent;
+  border-radius: 25px;
   background-color: #EAEAEA;
   font-size: 20px;
   align-items: center;
   justify-content: center;
   font-family: Verdana;
-  color: #252A34;
 }
+
+.red-button{
+  transition: 0.5s;
+  background-color: #FF2E63;
+  color: #EAEAEA;
+}
+
+.red-button:hover{
+  transition: 0.5s;
+  background-color: #EAEAEA;
+  color: #181b22;
+}
+
+.white-button{
+  transition: 0.5s;
+  background-color: #EAEAEA;
+  color: #181b22;
+}
+
+.white-button:hover{
+  transition: 0.5s;
+  background-color: #FF2E63;
+  color: #EAEAEA;
+}
+
 
 .anime-details{
   padding-top: 2vh;

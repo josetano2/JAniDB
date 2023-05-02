@@ -11,9 +11,9 @@ export default function Favorites(){
     useEffect(() => {
         const animeFavorites = JSON.parse(localStorage.getItem('react-anime-favorites'))
         setFavorites(animeFavorites)
+        window.scrollTo(0, 0)
     }, [])
 
-    
     if(favorites && favorites.length !== 0){
 
         return(
