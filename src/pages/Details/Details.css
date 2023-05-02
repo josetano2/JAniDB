@@ -259,8 +259,9 @@
   .genre-button{
     font-size: 11px;
     padding: 1.2vw;
-    margin-right: 4vw;
+    margin-right: 3vw;
     border-width: 0.3ch;
+    margin-bottom: 1vh;
   }
   .anime-details h1{
     font-size: 15px;
