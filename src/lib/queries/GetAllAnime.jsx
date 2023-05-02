@@ -99,6 +99,26 @@ query getRomComAnime($page: Int, $perPage: Int){
 }
 `
 
+export const GET_SPECIFIC_GENRE = gql`
+query getSpecificGenre($specificGenre: String){
+  Page(page: 1, perPage: 50){
+    media(type: ANIME, sort: POPULARITY_DESC, isAdult: false, genre: $specificGenre){
+      id
+      title {
+        english
+        native
+      }
+      averageScore
+      episodes
+      coverImage {
+        large
+      }
+      description
+    }
+  }
+}
+`
+
 export const GET_DETAILS = gql`
 query getDetails($idNum: Int){
     Media(id: $idNum){

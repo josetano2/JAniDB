@@ -1,5 +1,5 @@
 import { useQuery } from "@apollo/client";
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { GET_DETAILS } from "../../lib/queries/GetAllAnime";
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
 import NavBar from "../../components/Navbar/NavBar"
@@ -23,6 +23,7 @@ export default function Details(){
     
     const [favorites, setFavorites] = useState([])
     const [isFavorited, setIsFavorited] = useState(false)
+    
 
     useEffect(() => {
         const localFav = JSON.parse(localStorage.getItem('react-anime-favorites'))
@@ -59,6 +60,12 @@ export default function Details(){
         saveToLocalStorage(newFavoriteList)
     }
 
+    const navigate = useNavigate()
+
+    const getGenre = (animeGenre) => {
+        console.log(animeGenre)
+        navigate(`/genre?query=${animeGenre}`)
+    }
 
     if(error) return <h1>{error.message}</h1>
     if(loading) return (
@@ -89,9 +96,14 @@ export default function Details(){
                     <br />
                     {data.Media.genres.slice(0, 4).map((animeGenre) => {
                         return(
-                            <div className="genre">{animeGenre}</div>
+                            <div className="genre">
+                                <button 
+                                className="genre-button"
+                                onClick={() => getGenre(animeGenre)}
+                                >{animeGenre}</button>
+                            </div>
                             )
-                        })}
+                    })}
                     <div className="anime-info">
                         <div className="left-info">
                             <div><h1>Score</h1> {data.Media.averageScore}%</div>

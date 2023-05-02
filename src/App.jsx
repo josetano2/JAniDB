@@ -7,6 +7,7 @@ import {
 import Search from './pages/Search/Search';
 import Details from './pages/Details/Details';
 import Favorites from './pages/Favorites/Favorites';
+import Genre from './pages/Genre/Genre'
 
   export default function App(){
   const client = new ApolloClient({
@@ -30,6 +31,10 @@ import Favorites from './pages/Favorites/Favorites';
     {
       path: "/favorites",
       element: <Favorites/>,
+    },
+    {
+      path: "/genre",
+      element: <Genre/>
     },
   ]);
 
