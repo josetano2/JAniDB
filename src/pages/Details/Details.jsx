@@ -94,7 +94,7 @@ export default function Details(){
                 <div className="anime-details">
                     <h1>{data.Media.title.english ? data.Media.title.english : data.Media.title.native}</h1>
                     <br />
-                    {data.Media.genres.slice(0, 4).map((animeGenre) => {
+                    {data.Media.genres.slice(0, 3).map((animeGenre) => {
                         return(
                             <div className="genre">
                                 <button 
