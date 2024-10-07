@@ -26,7 +26,7 @@ export default function Home(){
     return (
         <div className="bg">
             <NavBar/>
-            <AnimeSlider/>
+            {/* <AnimeSlider/> */}
             <AnimeGrids/>
         </div>
     )
