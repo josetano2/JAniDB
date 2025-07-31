@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# JAniDB 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**JAniDB** is a React-based web application that fetches and displays anime information using the [AniList GraphQL API](https://anilist.co/graphiql). This project showcases how to build a dynamic frontend that interacts with a public GraphQL endpoint to retrieve real-time anime data.
 
-## Available Scripts
+## 🌟 Features
 
-In the project directory, you can run:
+- 🔍 **Anime Search** — Find your favorite anime with a responsive search feature.
+- 📋 **Anime List** — Display a collection of anime with detailed information.
+- 📄 **Anime Details Page** — View synopsis, genres, episodes, and more.
+- ⚡ **GraphQL Integration** — Real-time data fetching using the AniList GraphQL API.
+- 💻 **React + TypeScript** — Built using modern frontend tools and practices.
 
-### `npm start`
+## 🔧 Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend**: React, TypeScript
+- **Styling**: CSS / Tailwind (if applicable)
+- **API**: [AniList GraphQL API](https://anilist.co/graphiql)
+- **Package Manager**: npm / yarn
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Getting Started
 
-### `npm test`
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/josetano2/JAniDB.git
+   cd JAniDB
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn
+   ```
 
-### `npm run build`
+3. **Run the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📦 Build for Production
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm run build
+npm run preview
+```
 
-### `npm run eject`
+## 🧠 Learning Points
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Working with GraphQL APIs using `graphql-request` or Apollo Client
+- Managing async data and state in a React app
+- Mapping API response data into UI components
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📚 Resources
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- [AniList API Docs](https://anilist.gitbook.io/anilist-apiv2-docs/)
+- [GraphQL](https://graphql.org/)
+- [React Docs](https://reactjs.org/)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📜 License
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License.
